@@ -1,4 +1,4 @@
-package com.queuesetu.restclient.client;
+package com.queuesetu.boot.core.restclient.client;
 
 public class DefaultRestResponse<T> implements RestResponse<T> {
 

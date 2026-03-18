@@ -1,4 +1,4 @@
-package com.queuesetu.restclient.exception;
+package com.queuesetu.boot.core.restclient.exception;
 
 public class RestClientException extends RuntimeException {
 

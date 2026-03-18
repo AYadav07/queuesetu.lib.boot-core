@@ -1,6 +1,6 @@
-package com.queuesetu.restclient.factory;
+package com.queuesetu.boot.core.restclient.factory;
 
-import com.queuesetu.restclient.client.ApiRestClient;
+import com.queuesetu.boot.core.restclient.client.ApiRestClient;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.springframework.web.client.RestClient;

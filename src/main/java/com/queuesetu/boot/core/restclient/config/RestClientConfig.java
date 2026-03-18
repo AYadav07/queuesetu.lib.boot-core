@@ -1,4 +1,4 @@
-package com.queuesetu.restclient.config;
+package com.queuesetu.boot.core.restclient.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
-package com.queuesetu.restclient.client;
+package com.queuesetu.boot.core.restclient.client;
 
-import com.queuesetu.restclient.exception.RestClientException;
+import com.queuesetu.boot.core.restclient.exception.RestClientException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.UriComponentsBuilder;

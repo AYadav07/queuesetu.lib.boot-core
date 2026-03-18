@@ -1,4 +1,4 @@
-package com.queuesetu.restclient.model;
+package com.queuesetu.boot.core.restclient.model;
 
 public class ApiResponse<T> {
 

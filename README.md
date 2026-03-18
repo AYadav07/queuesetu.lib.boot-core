@@ -29,8 +29,8 @@ Because this library provides `RestClientConfig` and `RestClientFactory`, import
 ```java
 package com.example.config;
 
-import com.queuesetu.restclient.config.RestClientConfig;
-import com.queuesetu.restclient.factory.RestClientFactory;
+import com.queuesetu.boot.core.config.restclient.RestClientConfig;
+import com.queuesetu.boot.core.factory.restclient.RestClientFactory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -49,8 +49,8 @@ These methods return `RestResponse<T>`, so you can access both body and status:
 ```java
 package com.example.integration;
 
-import com.queuesetu.restclient.client.RestResponse;
-import com.queuesetu.restclient.factory.RestClientFactory;
+import com.queuesetu.boot.core.client.restclient.RestResponse;
+import com.queuesetu.boot.core.factory.restclient.RestClientFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -109,8 +109,8 @@ This style returns entity directly for `get/post/put` and bodiless response for 
 ```java
 package com.example.integration;
 
-import com.queuesetu.restclient.client.ApiRestClient;
-import com.queuesetu.restclient.factory.RestClientFactory;
+import com.queuesetu.boot.core.client.restclient.ApiRestClient;
+import com.queuesetu.boot.core.factory.restclient.RestClientFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
