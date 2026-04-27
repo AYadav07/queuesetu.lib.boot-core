@@ -2,8 +2,11 @@ package com.queuesetu.boot.core.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -11,7 +14,22 @@ import java.util.stream.Collectors;
 public class JwtConfig {
 
     @Value("${jwt.secret}")
+    private String secret;
+
     private Key key;
+
+    @PostConstruct
+    void initKey() {
+        // 1) Try Base64 (recommended for JWT secrets)
+        // 2) Fall back to raw string bytes (useful for local/test)
+        byte[] keyBytes;
+        try {
+            keyBytes = Base64.getDecoder().decode(secret);
+        } catch (IllegalArgumentException ex) {
+            keyBytes = secret.getBytes(StandardCharsets.UTF_8);
+        }
+        this.key = Keys.hmacShaKeyFor(keyBytes);
+    }
 
     public Claims validateTokenAndGetClaims(String token) {
         return Jwts.parserBuilder().setSigningKey(key).build()

@@ -79,11 +79,9 @@ public class ApiRestClient {
     public <T> T post(Class<T> responseType) {
         return executeForEntity(
                 "POST",
-                restClient
-                        .post()
-                        .uri(buildUri())
-                        .headers(this::applyHeaders)
-                        .body(body),
+                body != null
+                        ? restClient.post().uri(buildUri()).headers(this::applyHeaders).body(body)
+                        : restClient.post().uri(buildUri()).headers(this::applyHeaders).contentLength(0),
                 responseType
         ).toEntity();
     }
@@ -92,11 +90,9 @@ public class ApiRestClient {
         this.path(path);
         return executeForEntity(
             "POST",
-            restClient
-                .post()
-                .uri(buildUri())
-                .headers(this::applyHeaders)
-                .body(body),
+            body != null
+                    ? restClient.post().uri(buildUri()).headers(this::applyHeaders).body(body)
+                    : restClient.post().uri(buildUri()).headers(this::applyHeaders).contentLength(0),
             responseType
         );
         }
@@ -106,11 +102,9 @@ public class ApiRestClient {
         this.body(requestBody);
         return executeForEntity(
             "POST",
-            restClient
-                .post()
-                .uri(buildUri())
-                .headers(this::applyHeaders)
-                .body(body),
+            body != null
+                    ? restClient.post().uri(buildUri()).headers(this::applyHeaders).body(body)
+                    : restClient.post().uri(buildUri()).headers(this::applyHeaders).contentLength(0),
             responseType
         );
         }
@@ -118,11 +112,9 @@ public class ApiRestClient {
     public <T> T put(Class<T> responseType) {
         return executeForEntity(
                 "PUT",
-                restClient
-                        .put()
-                        .uri(buildUri())
-                        .headers(this::applyHeaders)
-                        .body(body),
+                body != null
+                        ? restClient.put().uri(buildUri()).headers(this::applyHeaders).body(body)
+                        : restClient.put().uri(buildUri()).headers(this::applyHeaders).contentLength(0),
                 responseType
         ).toEntity();
     }
@@ -131,11 +123,9 @@ public class ApiRestClient {
         this.path(path);
         return executeForEntity(
             "PUT",
-            restClient
-                .put()
-                .uri(buildUri())
-                .headers(this::applyHeaders)
-                .body(body),
+            body != null
+                    ? restClient.put().uri(buildUri()).headers(this::applyHeaders).body(body)
+                    : restClient.put().uri(buildUri()).headers(this::applyHeaders).contentLength(0),
             responseType
         );
         }
@@ -145,11 +135,9 @@ public class ApiRestClient {
         this.body(requestBody);
         return executeForEntity(
             "PUT",
-            restClient
-                .put()
-                .uri(buildUri())
-                .headers(this::applyHeaders)
-                .body(body),
+            body != null
+                    ? restClient.put().uri(buildUri()).headers(this::applyHeaders).body(body)
+                    : restClient.put().uri(buildUri()).headers(this::applyHeaders).contentLength(0),
             responseType
         );
         }
