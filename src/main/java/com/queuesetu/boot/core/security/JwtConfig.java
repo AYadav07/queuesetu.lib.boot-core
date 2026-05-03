@@ -16,10 +16,10 @@ public class JwtConfig {
     @Value("${jwt.secret}")
     private String secret;
 
-    private Key key;
+    protected Key key;
 
     @PostConstruct
-    void initKey() {
+    protected void initKey() {
         // 1) Try Base64 (recommended for JWT secrets)
         // 2) Fall back to raw string bytes (useful for local/test)
         byte[] keyBytes;
