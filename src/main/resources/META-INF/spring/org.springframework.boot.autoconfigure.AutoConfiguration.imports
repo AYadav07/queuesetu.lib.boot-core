@@ -1,1 +1,2 @@
 com.queuesetu.boot.core.security.SecurityConfig
+com.queuesetu.boot.core.security.MethodSecurityConfig
